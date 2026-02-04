@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JobBoard Interactive</title>
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background:#f2f2f2;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:10px 20px;
+            background:white;
+            border-bottom:1px solid #ccc;
+        }
+
+        .search{
+            flex:1;
+            margin:0 20px;
+        }
+
+        .search input{
+            width:100%;
+            padding:6px;
+            border:1px solid #aaa;
+        }
+
+        .main{
+            display:flex;
+            gap:15px;
+            padding:15px;
+        }
+
+        .left, .right{
+            flex:1;
+        }
+
+        .center{
+            flex:2;
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        .card{
+            background:white;
+            padding:12px;
+            border:1px solid #ccc;
+        }
+
+        .card:hover{
+            border-color:#0a66c2;
+            background:#f9fbff;
+        }
+
+        /* Apply Form Styling */
+        .apply-section{
+            background:white;
+            padding:15px;
+            border:1px solid #ccc;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:8px;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input, textarea, select{
+            padding:6px;
+            border:1px solid #aaa;
+            width:100%;
+        }
+
+        .radio-group{
+            display:flex;
+            gap:15px;
+        }
+
+        button{
+            margin-top:10px;
+            padding:8px;
+            border:none;
+            background:#0a66c2;
+            color:white;
+            cursor:pointer;
+        }
+
+        .suggestion p:hover{
+            background:#eef6ff;
+            cursor:pointer;
+        }
+
+        .profile-card:hover{
+            background:#eef6ff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div><b>JobBoard</b></div>
+
+        <div class="search">
+            <input type="text" placeholder="Search jobs">
+        </div>
+
+        <div>Profile</div>
+    </header>
+
+    <div class="main">
+
+        <!-- LEFT -->
+        <div class="left">
+            <div class="card profile-card">
+                <h3>Your Profile</h3>
+                <p>Name: Sahil</p>
+                <p>Role: Developer</p>
+            </div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="center">
+
+            <!-- Job Listings -->
+            <div class="card">
+                <h3>Frontend Developer</h3>
+                <p>Company: TechSoft</p>
+                <p>Location: Remote</p>
+            </div>
+
+            <div class="card">
+                <h3>Backend Developer</h3>
+                <p>Company: CodeWorks</p>
+                <p>Location: Bangalore</p>
+            </div>
+
+            <!-- Single Apply Form -->
+            <div class="apply-section">
+                <h3>Apply for a Job</h3>
+
+                <form>
+
+                    <label>Select Job Role</label>
+                    <select required>
+                        <option value="">-- Choose Job --</option>
+                        <option>Frontend Developer - TechSoft (Remote)</option>
+                        <option>Backend Developer - CodeWorks (Bangalore)</option>
+                    </select>
+
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter email" required>
+
+                    <label>Phone</label>
+                    <input type="tel" placeholder="Enter phone">
+
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <input type="radio" name="gender"> Male
+                        <input type="radio" name="gender"> Female
+                        <input type="radio" name="gender"> Other
+                    </div>
+
+                    <label>Qualification</label>
+                    <select>
+                        <option>B.Tech</option>
+                        <option>M.Tech</option>
+                        <option>BCA</option>
+                        <option>MCA</option>
+                    </select>
+
+                    <label>Upload Resume (PDF)</label>
+                    <input type="file" accept=".pdf">
+
+                    <label>Why should we hire you?</label>
+                    <textarea rows="3"></textarea>
+
+                    <button type="submit">Submit Application</button>
+
+                </form>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+            <div class="card suggestion">
+                <h3>Suggested Jobs</h3>
+                <p>UI/UX Designer</p>
+                <p>React Developer</p>
+                <p>ML Intern</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
