@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>document</title>
+</head>
+<body>
+
+<h2>Dynamic List Manager</h2>
+
+<input type="text" id="itemInput" placeholder="Enter list item">
+<button onclick="addItem()">Add Item</button>
+<button onclick="removeItem()">Remove Last Item</button>
+
+<ul id="list"></ul>
+
+<script>
+function addItem() {
+    let input = document.getElementById("itemInput");
+    let value = input.value.trim();
+
+    if (value === "") {
+        alert("Please enter an item");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.textContent = value;
+
+    document.getElementById("list").appendChild(li);
+
+    input.value = ""; // clear input
+}
+
+function removeItem() {
+    let list = document.getElementById("list");
+
+    if (list.lastElementChild) {
+        list.removeChild(list.lastElementChild);
+    } else {
+        alert("No items to remove");
+    }
+}
+</script>
+
+</body>
+</html>
